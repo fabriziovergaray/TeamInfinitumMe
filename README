@@ -1,0 +1,53 @@
+Libreria de iconos usados "IonIcons"
+
+
+```
+https://ionic.io/ionicons/
+
+```
+
+Para usar lo iconos
+
+```
+import Icon from 'react-native-vector-icons/Ionicons'
+
+<Icon name=''/>
+```
+
+Si causa Error revisar android/app/build.gradle y agregar lo siguiente y volver a compilar
+
+```
+project.ext.vectoricons = [
+    iconFontNames: [ 'Ionicons.ttf' ] // Name of the font files you want to copy
+]
+
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
+```
+
+
+
+El react-native-gesture-handler causa incompatibilidad si es el caso degradar la version
+
+```
+ npm install react-native-gesture-handler@2.7.1
+```
+
+Si presenta errores al instalar reanimated hacer lo siguiente en babel.config.js añadir 
+
+```
+module.exports = {
+  presets: ['module:metro-react-native-babel-preset'],
+  plugins: ['react-native-reanimated/plugin'],
+};
+
+```
+Despues volver a compilar y usar 
+
+```
+ npm start -- --reset-cache  
+ 
+```
+
+
+Si hay mas errores de versiones o sugerencias añadir aqui 
